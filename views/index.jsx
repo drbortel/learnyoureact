@@ -1,8 +1,16 @@
 import React from 'react';
 
 export default class TodoBox extends React.Component {
- // Omitted
-}
+   render() {
+       return (
+           <div className="todoBox">
+                <h1>Todos</h1>
+              <TodoList />
+               <TodoForm />
+          </div>
+        );
+     }
+   }
 
 class TodoList extends React.Component {
    render() {
@@ -19,29 +27,18 @@ class TodoList extends React.Component {
    }
 }
 
-    class TodoList extends React.Component {
-        render() {
-            return (
-              <div class="todoList">
-                <table style="border:2px solid black;">
-                  <tbody>
-                    <tr>
-                      <td style="border:1px solid black;">Shopping</td>
-                      <td style="border:1px solid black;">Milk</td>
-                    </tr>
-                    <tr>
-                      <td style="border:1px solid black;">Hair cut</td>
-                      <td style="border:1px solid black;">13:00</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            );
+class Todo extends React.Component {
+    render() {
+      return (
+                <tr>
+                    <td style={{border:"1px solid black"}}>{this.props.title}</td>
+                    <td style={{border:"1px solid black"}}>{this.props.children}</td>
+                </tr>
+          );
         }
     }
 
-
-    class TodoForm extends React.Component {
+class TodoForm extends React.Component {
         render() {
             return <div className="todoForm">
                 I am a TodoForm.
